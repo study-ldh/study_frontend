@@ -8,7 +8,7 @@ function App() {
 
   // 1. 목록 불러오기 함수
   const fetchStudies = () => {
-    axios.get('http://localhost:8080/api/study')
+    axios.get('http://ec2-52-78-98-7.ap-northeast-2.compute.amazonaws.com:8080/api/study')
       .then(res => setStudies(res.data))
       .catch(err => console.log(err));
   };
@@ -21,7 +21,7 @@ function App() {
   const handleSave = () => {
     if (!title || !content) return alert("내용을 입력하세요!");
 
-    axios.post('http://localhost:8080/api/study', {
+    axios.post('http://ec2-52-78-98-7.ap-northeast-2.compute.amazonaws.com:8080/api/study', {
       title: title,
       content: content
     })
